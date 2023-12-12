@@ -5,7 +5,7 @@
 using namespace std;
 
 void matinfo(vector<vector<double>> matrix);
-void matdisp(vector<double> vector);
+void vecdisp(vector<double> vector);
 void matdisp(vector<vector<double>> matrix);
 vector<double> scalar_prod(double a, vector<double> A); 
 vector<double> scalar_prod(vector<double> A, double a);
@@ -124,7 +124,7 @@ int main(int argc, char* argv[]) {
         {-4, 9, 1},
         {2, 0, 3}
     };
-    matdisp(matmul(mat_A, vec_x));
+    vecdisp(matmul(mat_A, vec_x));
     cout << "b." << endl;
     vec_x = {4, 5, -2};
     mat_A=
@@ -133,7 +133,7 @@ int main(int argc, char* argv[]) {
         {-3, 9, 0},
         {3, -1, 2}
     };
-    matdisp(matmul(mat_A, vec_x));
+    vecdisp(matmul(mat_A, vec_x));
     
     cout << "15. ================" << endl;
     mat_A = 
@@ -157,24 +157,24 @@ int main(int argc, char* argv[]) {
     cout << "17. ================" << endl;
     cout << "a." << endl; 
     cout << "AB_1st_row = ";
-    matdisp(matmul(mat_A, mat_B)[0]);
+    vecdisp(matmul(mat_A, mat_B)[0]);
     cout << "b." << endl; 
     cout << "AB_3rd_row = ";
-    matdisp(matmul(mat_A, mat_B)[2]);
+    vecdisp(matmul(mat_A, mat_B)[2]);
     cout << "c." << endl; 
     cout << "AB_1st_col = ";
-    matdisp(transpose((matmul(mat_A, mat_B)))[1]);
+    vecdisp(transpose((matmul(mat_A, mat_B)))[1]);
 
     cout << "18. ================" << endl;
     cout << "a." << endl; 
     cout << "BA_1st_row = ";
-    matdisp(matmul(mat_B, mat_A)[0]);
+    vecdisp(matmul(mat_B, mat_A)[0]);
     cout << "b." << endl; 
     cout << "BA_3rd_row = ";
-    matdisp(matmul(mat_B, mat_A)[2]);
+    vecdisp(matmul(mat_B, mat_A)[2]);
     cout << "c." << endl; 
     cout << "BA_1st_col = ";
-    matdisp(transpose((matmul(mat_B, mat_A)))[1]);
+    vecdisp(transpose((matmul(mat_B, mat_A)))[1]);
 
     cout << "19. ================" << endl;
     cout << "a. " << trace(mat_A) << endl;
@@ -195,7 +195,7 @@ void matinfo(vector<vector<double>> matrix) {
     cout << "n X m = " << matrix.size() << "X" <<  matrix[0].size() << endl;
 };
 
-void matdisp(vector<double> vector) {
+void vecdisp(vector<double> vector) {
     cout << "[ ";
     for (size_t i = 0; i < vector.size(); i++){
         cout << vector[i]<< " ";
